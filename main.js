@@ -1,5 +1,4 @@
 const form = document.querySelector(".contact-form");
-
 const name = document.getElementById('name');
 const reason = document.getElementById('reason');
 const email = document.getElementById('email');
@@ -12,7 +11,7 @@ form.addEventListener("submit", (event) => {
     valida = name.value.length === 0
     if (valida){
         alert("Debe digitar el Nombre");
-        name.className="invalid"
+        name.className="invalid";
         name.focus();
         return;
     } else {
@@ -23,9 +22,13 @@ form.addEventListener("submit", (event) => {
 
     // validamos email
     valida = email.value.length === 0
-    if (valida){
-        if(email.value.indexOf("@") != 1){
-            alert("El correo debe tener el símbolo @ por lo menos una vez o no estar vacío")
+        || email.value.indexOf("@") === -1
+        || email.value.indexOf(".") === -1
+        || email.value.indexOf("@") === 0
+        || email.value.indexOf(".") === 0
+        || email.value.indexOf("@",1) === -1;
+    if(valida){
+            alert("El correo debe tener el símbolo @ y . por lo menos una vez o no estar vacío");
             valida=false;
             email.className = "invalid"
             email.focus();
@@ -34,13 +37,13 @@ form.addEventListener("submit", (event) => {
             valida = true;
             email.className ="form-input";
         }
-    }
+
 
     // validamos motivo
     valida = reason.value.length === 0
     if (valida){
         alert("Debe Digitar el Motivo del contacto");
-        reason.className="invalid"
+        reason.className="invalid";
         reason.focus();
         return;
     } else {
