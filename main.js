@@ -25,7 +25,7 @@ form.addEventListener("submit", (event) => {
     valida = email.value.length === 0
     if (valida){
         if(email.value.indexOf("@") != 1){
-            alert("El correo debe teener el símbolo @ por lo menos una vez")
+            alert("El correo debe tener el símbolo @ por lo menos una vez o no estar vacío")
             valida=false;
             email.className = "invalid"
             email.focus();
@@ -54,6 +54,7 @@ form.addEventListener("submit", (event) => {
         console.log("Correo:", email.value);
 
         alert("Hola " + name.value + ", su correo es " + email.value + " y su motivo de contacto es: \n" + reason.value);
+        form.submit();
     }
 });
 
