@@ -57,7 +57,7 @@ form.addEventListener("submit", (event) => {
         console.log("Correo:", email.value);
 
         alert("Hola " + name.value + ", su correo es " + email.value + " y su motivo de contacto es: \n" + reason.value);
-        form.submit();
+
     }
 });
 
