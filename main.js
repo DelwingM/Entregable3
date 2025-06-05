@@ -29,8 +29,7 @@ form.addEventListener("submit", (event) => {
         || email.value.indexOf("@",1) === -1;
     if(valida){
             alert("El correo debe tener el símbolo @ y . por lo menos una vez o no estar vacío");
-            valida=false;
-            email.className = "invalid"
+            email.className = "invalid";
             email.focus();
             return;
         } else {
